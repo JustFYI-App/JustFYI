@@ -18,7 +18,7 @@ composeMaterialIconsExtended = "1.7.3"
 junit = "4.13.2"
 kotlin = "2.3.0"
 kotlinxSerialization = "1.9.0"
-kotlinxDatetime = "0.7.1"
+kotlinxDatetime = "0.7.1-0.6.x-compat"
 metro = "0.9.4"
 coroutines = "1.10.2"
 # Firebase
