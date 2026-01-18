@@ -1,0 +1,68 @@
+-- User table stores the current user's information
+-- Only one user record should exist at a time (the current authenticated user)
+
+CREATE TABLE User (
+    id TEXT PRIMARY KEY NOT NULL,
+    anonymous_id TEXT NOT NULL UNIQUE,
+    username TEXT NOT NULL,
+    created_at INTEGER NOT NULL,
+    fcm_token TEXT,
+    id_backup_confirmed INTEGER NOT NULL DEFAULT 0
+);
+
+-- Insert a new user
+insertUser:
+INSERT INTO User (id, anonymous_id, username, created_at, fcm_token, id_backup_confirmed)
+VALUES (?, ?, ?, ?, ?, ?);
+
+-- Update user information
+updateUser:
+UPDATE User
+SET username = ?, fcm_token = ?, id_backup_confirmed = ?
+WHERE id = ?;
+
+-- Update username only
+updateUsername:
+UPDATE User
+SET username = ?
+WHERE id = ?;
+
+-- Update FCM token
+updateFcmToken:
+UPDATE User
+SET fcm_token = ?
+WHERE id = ?;
+
+-- Update ID backup confirmation status
+updateIdBackupConfirmed:
+UPDATE User
+SET id_backup_confirmed = ?
+WHERE id = ?;
+
+-- Delete user (for GDPR compliance)
+deleteUser:
+DELETE FROM User
+WHERE id = ?;
+
+-- Delete all users (for account deletion)
+deleteAllUsers:
+DELETE FROM User;
+
+-- Get current user (should be only one)
+getCurrentUser:
+SELECT * FROM User
+LIMIT 1;
+
+-- Get user by id
+getUserById:
+SELECT * FROM User
+WHERE id = ?;
+
+-- Get user by anonymous_id (for account recovery)
+getUserByAnonymousId:
+SELECT * FROM User
+WHERE anonymous_id = ?;
+
+-- Check if user exists
+userExists:
+SELECT COUNT(*) FROM User;

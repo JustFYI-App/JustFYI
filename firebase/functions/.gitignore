@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Compiled output
+lib/
+
+# Local Firebase emulator data
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+pubsub-debug.log
+ui-debug.log
+*.local
+
+# IDE
+.idea/
+.vscode/
+
+# Test coverage
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db

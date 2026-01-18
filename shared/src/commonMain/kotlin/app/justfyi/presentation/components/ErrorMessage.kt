@@ -1,0 +1,67 @@
+package app.justfyi.presentation.components
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import justfyi.shared.generated.resources.*
+import justfyi.shared.generated.resources.Res
+import org.jetbrains.compose.resources.stringResource
+
+/**
+ * An error message component for the Just FYI app.
+ * Shows an error icon, message, and optional retry button.
+ *
+ * @param message The error message to display
+ * @param modifier Modifier for the component
+ * @param onRetry Optional callback for retry button
+ */
+@Composable
+fun ErrorMessage(
+    message: String,
+    modifier: Modifier = Modifier,
+    onRetry: (() -> Unit)? = null,
+) {
+    Column(
+        modifier =
+            modifier
+                .fillMaxSize()
+                .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        // Using text instead of icon to avoid platform-specific icon dependencies
+        Text(
+            text = "!",
+            style = MaterialTheme.typography.displayLarge,
+            color = MaterialTheme.colorScheme.error,
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = message,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+        )
+
+        if (onRetry != null) {
+            Spacer(modifier = Modifier.height(24.dp))
+            JustFyiButton(
+                text = stringResource(Res.string.common_retry),
+                onClick = onRetry,
+                variant = JustFyiButtonVariant.PRIMARY,
+            )
+        }
+    }
+}

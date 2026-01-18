@@ -1,0 +1,14 @@
+/*
+  Localizable.strings (French)
+  Just FYI
+
+  FCM localization keys for push notifications.
+  These keys must match server-side keys in pushNotification.ts
+*/
+
+"notification_exposure_title" = "Exposition potentielle";
+"notification_exposure_body" = "Vous pourriez avoir été exposé à une IST. Appuyez pour voir les détails.";
+"notification_update_title" = "Mise à jour de la chaîne";
+"notification_update_body" = "Quelqu'un dans votre chaîne d'exposition a mis à jour son statut.";
+"notification_report_deleted_title" = "Rapport retiré";
+"notification_report_deleted_body" = "Un rapport qui aurait pu vous affecter a été retiré.";

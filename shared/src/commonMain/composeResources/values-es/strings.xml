@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="backup_confirm">Ya Lo Guarde</string>
+        <string name="backup_dialog_description">Guarda este ID para recuperar tu cuenta si reinstalas la aplicacion. Sin este ID, tu cuenta no podra ser recuperada.</string>
+        <string name="backup_dialog_title">Respalda Tu ID</string>
+        <string name="backup_remind_later">Recordarme Despues</string>
+        <string name="backup_your_id">Tu ID:</string>
+        <string name="cd_cancel">Cancelar</string>
+        <string name="cd_edit_username">Editar nombre de usuario</string>
+        <string name="cd_hide_id">Ocultar ID</string>
+        <string name="cd_notifications">Notificaciones</string>
+        <string name="cd_profile">Perfil</string>
+        <string name="cd_reveal_id">Revelar ID</string>
+        <string name="chain_negative_test_notice">Alguien en esta cadena tuvo resultado negativo, lo que puede reducir tu riesgo.</string>
+        <string name="chain_no_test">sin prueba</string>
+        <string name="chain_not_available">Informacion de cadena no disponible</string>
+        <string name="chain_someone">Alguien</string>
+        <string name="chain_title">Cadena de Exposicion</string>
+        <string name="chain_you">Tu</string>
+        <string name="common_cancel">Cancelar</string>
+        <string name="common_retry">Reintentar</string>
+        <string name="common_save">Guardar</string>
+        <string name="delete_confirm">Eliminar Cuenta</string>
+        <string name="delete_message">Esta accion es irreversible. Todos tus datos seran eliminados y no podran ser recuperados. Esto incluye:
+
+- Todas las interacciones registradas
+- Todas las notificaciones
+- Todos los reportes de exposicion
+- Tu ID anonimo
+
+Estas seguro de que quieres eliminar tu cuenta?</string>
+        <string name="delete_title">Eliminar Cuenta</string>
+        <string name="history_at">a las</string>
+        <string name="history_days_left">%1$dd restantes</string>
+        <string name="history_loading">Cargando interacciones...</string>
+        <string name="history_no_interactions">Sin Interacciones Aun</string>
+        <string name="history_no_interactions_description">Tus interacciones registradas apareceran aqui. Usa la pantalla principal para descubrir usuarios cercanos y registrar interacciones.</string>
+        <string name="history_pending_sync">Sincronizacion pendiente</string>
+        <string name="history_retention_notice">Las interacciones se eliminan automaticamente despues de 180 dias</string>
+        <string name="history_title">Historial de Interacciones</string>
+        <string name="interaction_detail_title">Detalle de Interaccion</string>
+        <string name="interaction_detail_id_message">ID de Interaccion: %1$s</string>
+        <string name="home_report_positive_test">Reportar Resultado Positivo</string>
+        <string name="home_scanning">Escaneando...</string>
+        <string name="home_scanning_description">Buscando usuarios de Just FYI cercanos. Asegurate de que el Bluetooth este activado en ambos dispositivos.</string>
+        <string name="home_title">Just FYI</string>
+        <string name="signal_excellent">Senal excelente</string>
+        <string name="signal_good">Buena senal</string>
+        <string name="signal_fair">Senal regular</string>
+        <string name="signal_weak">Senal debil</string>
+        <string name="nav_back">Atras</string>
+        <string name="nav_next">Siguiente</string>
+        <string name="notification_action_1">1. Hazte la prueba lo antes posible</string>
+        <string name="notification_action_2">2. Evita contacto sin proteccion hasta recibir los resultados</string>
+        <string name="notification_action_3">3. Consulta a un profesional de la salud</string>
+        <string name="notification_action_4">4. Considera informar a parejas recientes</string>
+        <string name="notification_chain_status_update">Actualizacion de Estado de Cadena</string>
+        <string name="notification_chain_update">Actualizacion de Cadena</string>
+        <string name="notification_days_ago">Hace %1$dd</string>
+        <string name="notification_detail_title">Detalles de Notificacion</string>
+        <string name="notification_exposure_date">Fecha de Posible Exposicion</string>
+        <string name="notification_exposure_description">Podrias haber estado expuesto a %1$s. Toca para ver detalles y acciones recomendadas.</string>
+        <string name="notification_exposure_description_generic">Podrias haber estado expuesto a una ITS. Toca para ver detalles y acciones recomendadas.</string>
+        <string name="notification_generic">Notificacion</string>
+        <string name="notification_hours_ago">Hace %1$dh</string>
+        <string name="notification_just_now">Ahora mismo</string>
+        <string name="notification_loading">Cargando notificacion...</string>
+        <string name="notification_mark_as_tested">Marcar como Realizado</string>
+        <string name="notification_marked_as_tested">Marcado como Realizado</string>
+        <string name="notification_marked_success">Marcado como realizado. Tu estado sera compartido con otros en esta cadena.</string>
+        <string name="notification_minutes_ago">Hace %1$dm</string>
+        <string name="notification_potential_exposure">Posible Exposicion</string>
+        <string name="notification_received">Recibido: %1$s</string>
+        <string name="notification_recommended_actions">Acciones Recomendadas</string>
+        <string name="notification_sti_exposure">Posible Exposicion a ITS</string>
+        <string name="notification_sti_type">Tipo de ITS</string>
+        <string name="notification_tap_details">Toca para ver detalles.</string>
+        <string name="notification_test_status_shared">Tu estado de prueba sera compartido con otros en esta cadena de exposicion para ayudar en su evaluacion de riesgo.</string>
+        <string name="notification_update_description">Alguien en tu cadena de exposicion ha actualizado su estado.</string>
+        <string name="notifications_empty">Sin Notificaciones</string>
+        <string name="notifications_loading">Cargando notificaciones...</string>
+        <string name="notifications_title">Notificaciones</string>
+        <string name="notifications_unread_count">%1$d notificacion(es) sin leer</string>
+        <string name="notifications_will_receive">Recibiras notificaciones aqui cuando alguien en tu cadena de interacciones reporte un resultado positivo.</string>
+        <string name="onboarding_already_have_account">Ya tienes una cuenta?</string>
+        <string name="onboarding_anonymous_id">ID Anonimo</string>
+        <string name="onboarding_anonymous_id_placeholder">ej., A961-8607-328D-4599-...</string>
+        <string name="onboarding_backup_confirm">He guardado mi ID en un lugar seguro</string>
+        <string name="onboarding_backup_description">Guarda este ID en un lugar seguro. Lo necesitaras para recuperar tu cuenta si reinstalas la aplicacion.</string>
+        <string name="onboarding_backup_title">Respalda Tu ID</string>
+        <string name="onboarding_backup_warning">Sin este ID, tu cuenta no podra ser recuperada. No hay opcion de restablecer contrasena ni recuperacion por correo electronico.</string>
+        <string name="onboarding_complete_setup">Completar Configuracion</string>
+        <string name="onboarding_continue_anyway">Continuar de Todos Modos</string>
+        <string name="onboarding_create_new_account">Crear Nueva Cuenta</string>
+        <string name="onboarding_create_new_instead">Crear Nueva Cuenta</string>
+        <string name="onboarding_get_started">Comenzar</string>
+        <string name="onboarding_get_started_description">Crea una nueva cuenta anonima para empezar a usar Just FYI. Tu identidad esta protegida con un ID anonimo unico.</string>
+        <string name="onboarding_grant_permissions">Otorgar Permisos</string>
+        <string name="onboarding_id_warning">Este ID es la unica forma de recuperar tu cuenta si reinstalas la aplicacion. Asegurate de guardarlo en el siguiente paso.</string>
+        <string name="onboarding_limited_functionality_message">Sin permisos, Just FYI no podra descubrir usuarios cercanos ni enviarte notificaciones de exposicion. Puedes otorgar permisos despues en Configuracion.</string>
+        <string name="onboarding_limited_functionality_title">Funcionalidad Limitada</string>
+        <string name="onboarding_loading_account">Configurando tu cuenta...</string>
+        <string name="onboarding_permission_bluetooth">Bluetooth</string>
+        <string name="onboarding_permission_bluetooth_description">El Bluetooth es necesario para detectar usuarios de Just FYI cercanos e intercambiar informacion de forma segura durante las interacciones.</string>
+        <string name="onboarding_permission_notifications">Notificaciones</string>
+        <string name="onboarding_permission_notifications_description">Recibe alertas cuando puedas haber estado expuesto a una ITS. Las notificaciones son anonimas y protegen tu privacidad.</string>
+        <string name="onboarding_permissions_description">Just FYI necesita algunos permisos para funcionar correctamente. Puedes omitir este paso, pero algunas funciones estaran limitadas.</string>
+        <string name="onboarding_permissions_skip_info">Puedes omitir los permisos ahora y activarlos despues en Configuracion, pero algunas funciones no estaran disponibles.</string>
+        <string name="onboarding_permissions_title">Permisos de la Aplicacion</string>
+        <string name="onboarding_recover_account">Recuperar Cuenta</string>
+        <string name="onboarding_recover_description">Ingresa tu ID anonimo guardado previamente para recuperar tu cuenta.</string>
+        <string name="onboarding_recover_existing">Recuperar Cuenta Existente</string>
+        <string name="onboarding_recover_title">Recupera Tu Cuenta</string>
+        <string name="onboarding_skip_and_finish">Omitir y Terminar</string>
+        <string name="onboarding_skip_for_now">Omitir por Ahora</string>
+        <string name="onboarding_start_over">Empezar de Nuevo</string>
+        <string name="onboarding_step_count">Paso %1$d de %2$d</string>
+        <string name="onboarding_step_id_backup">Respaldo de ID</string>
+        <string name="onboarding_step_permissions">Permisos</string>
+        <string name="onboarding_step_username">Nombre de Usuario</string>
+        <string name="onboarding_step_welcome">Bienvenida</string>
+        <string name="onboarding_try_again">Intentar de Nuevo</string>
+        <string name="onboarding_username_description">Tu nombre de usuario sera visible para otros usuarios de Just FYI cuando registres interacciones. Esto es opcional - puedes usar la aplicacion de forma anonima.</string>
+        <string name="onboarding_username_label">Nombre de Usuario</string>
+        <string name="onboarding_username_placeholder">Ingresa un nombre de usuario</string>
+        <string name="onboarding_username_requirements">Requisitos: solo caracteres ASCII, maximo 30 caracteres</string>
+        <string name="onboarding_username_skip_info">Si omites este paso, otros usuarios te veran como "Anonimo". Puedes establecer un nombre de usuario despues en tu Perfil.</string>
+        <string name="onboarding_username_title">Elige un Nombre de Usuario</string>
+        <string name="onboarding_welcome_description">Just FYI es una aplicacion de rastreo de contactos anonimo que te ayuda a mantenerte informado sobre posibles exposiciones de salud mientras protege tu privacidad.</string>
+        <string name="onboarding_welcome_title">Bienvenido a Just FYI</string>
+        <string name="onboarding_your_anonymous_id">Tu ID Anonimo</string>
+        <string name="permission_bluetooth_message">Just FYI necesita permiso de Bluetooth para descubrir usuarios cercanos y registrar interacciones.</string>
+        <string name="permission_bluetooth_title">Permiso de Bluetooth Requerido</string>
+        <string name="permission_grant">Otorgar Permiso</string>
+        <string name="profile_account_recovered">Cuenta recuperada exitosamente</string>
+        <string name="profile_account_recovery">Recuperacion de Cuenta</string>
+        <string name="profile_account_recovery_description">Si reinstalaste la aplicacion, puedes recuperar tu cuenta usando tu ID guardado.</string>
+        <string name="profile_copy_id">Copiar ID</string>
+        <string name="profile_edit_username">Editar Nombre de Usuario</string>
+        <string name="profile_edit_username_description">Ingresa un nuevo nombre de usuario (solo caracteres ASCII, maximo 30 caracteres)</string>
+        <string name="profile_id_copied">ID copiado al portapapeles</string>
+        <string name="profile_interaction_history">Historial de Interacciones</string>
+        <string name="profile_loading">Cargando perfil...</string>
+        <string name="profile_recover_account">Recuperar Cuenta</string>
+        <string name="profile_recover_button">Recuperar</string>
+        <string name="profile_recover_enter_id">Ingresa tu ID guardado para recuperar tu cuenta</string>
+        <string name="profile_recover_placeholder">XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX</string>
+        <string name="profile_save_id_warning">Guarda este ID para recuperar tu cuenta si reinstalas la aplicacion.</string>
+        <string name="profile_tap_to_hide">Toca para ocultar tu ID</string>
+        <string name="profile_tap_to_reveal">Toca para revelar tu ID</string>
+        <string name="profile_title">Perfil</string>
+        <string name="profile_username">Nombre de Usuario</string>
+        <string name="profile_username_not_set">No establecido</string>
+        <string name="profile_username_updated">Nombre de usuario actualizado</string>
+        <string name="profile_your_anonymous_id">Tu ID Anonimo</string>
+        <string name="report_cancel">Cancelar Reporte</string>
+        <string name="report_cancel_message">Estas seguro de que quieres cancelar? Tu progreso se perdera.</string>
+        <string name="report_continue">Continuar</string>
+        <string name="report_date_beyond_retention">La fecha debe estar dentro de los ultimos 180 dias</string>
+        <string name="report_date_future">La fecha no puede ser futura</string>
+        <string name="report_disclose_date">Revelar Fecha de Exposicion</string>
+        <string name="report_disclose_date_description">Incluir la posible fecha de exposicion en la notificacion. Si se desactiva, los contactos veran un rango de fechas.</string>
+        <string name="report_disclose_sti">Revelar Tipo de ITS</string>
+        <string name="report_disclose_sti_description">Incluir el tipo especifico de ITS en la notificacion. Si se desactiva, los contactos solo veran una notificacion generica de 'exposicion'.</string>
+        <string name="report_exposure_date_label">Fecha de Exposicion: %1$s</string>
+        <string name="report_incubation">Incubacion: hasta %1$d dias</string>
+        <string name="report_not_set">No establecido</string>
+        <string name="report_privacy_note">Nota de Privacidad</string>
+        <string name="report_privacy_note_description">Tu identidad nunca se revela a tus contactos. Todas las notificaciones son anonimas.</string>
+        <string name="report_review_auto_notify">Notificaciones</string>
+        <string name="report_review_auto_notify_description">Tus contactos seran notificados automaticamente segun tu historial de interacciones. El sistema determina a quien notificar sin requerir seleccion manual de contactos.</string>
+        <string name="report_review_disclosed">Revelado</string>
+        <string name="report_review_hidden">Oculto</string>
+        <string name="report_review_privacy">Opciones de Privacidad</string>
+        <string name="report_review_sti_types">Tipos de ITS</string>
+        <string name="report_review_test_date">Fecha de Prueba</string>
+        <string name="report_select">Seleccionar</string>
+        <string name="report_step_count">Paso %1$d de %2$d</string>
+        <string name="report_step1_description">Selecciona todas las ITS para las que diste positivo. Esta informacion se usara para calcular el periodo de exposicion.</string>
+        <string name="report_step1_name">Seleccion de ITS</string>
+        <string name="report_step1_title">Selecciona Tipo(s) de ITS</string>
+        <string name="report_step2_description">Selecciona la fecha de tu resultado positivo.</string>
+        <string name="report_step2_name">Fecha de Prueba</string>
+        <string name="report_step2_title">Cuando diste positivo?</string>
+        <string name="report_step5_description">Elige que informacion incluir en las notificaciones enviadas a tus contactos.</string>
+        <string name="report_step5_name">Opciones de Privacidad</string>
+        <string name="report_step5_title">Opciones de Privacidad</string>
+        <string name="report_step6_description">Por favor revisa los detalles antes de enviar.</string>
+        <string name="report_step6_name">Revision</string>
+        <string name="report_step6_title">Revisa Tu Reporte</string>
+        <string name="report_sti_type_label">Tipo de ITS: %1$s</string>
+        <string name="report_submit">Enviar Reporte</string>
+        <string name="report_submitting">Enviando reporte...</string>
+        <string name="report_tap_to_select_date">Toca para seleccionar fecha</string>
+        <string name="report_title">Reportar Resultado Positivo</string>
+        <string name="report_yes_cancel">Si, Cancelar</string>
+        <string name="settings_account">Cuenta</string>
+        <string name="settings_delete_account">Eliminar Cuenta</string>
+        <string name="settings_delete_account_subtitle">Eliminar permanentemente todos tus datos</string>
+        <string name="settings_delete_permanently">Eliminar cuenta permanentemente</string>
+        <string name="settings_deleting">Eliminando cuenta...</string>
+        <string name="settings_export_data">Exportar Mis Datos</string>
+        <string name="settings_export_data_description">Exportar todos tus datos como archivo ZIP</string>
+        <string name="settings_export_data_subtitle">Descargar una copia de tus datos</string>
+        <string name="settings_export_error">Error en la exportacion. Por favor, intentalo de nuevo.</string>
+        <string name="settings_exporting">Exportando datos...</string>
+        <string name="settings_language">Idioma</string>
+        <string name="settings_language_changed">Idioma cambiado. Algunos cambios pueden requerir reiniciar la aplicacion.</string>
+        <string name="settings_language_current">Seleccionar idioma, actualmente %1$s</string>
+        <string name="settings_language_english">English</string>
+        <string name="settings_language_german">Deutsch</string>
+        <string name="settings_language_select">Seleccionar Idioma</string>
+        <string name="settings_language_system_default">Predeterminado del Sistema</string>
+        <string name="settings_legal">Legal</string>
+        <string name="settings_loading">Cargando configuracion...</string>
+        <string name="settings_open_privacy_policy">Abrir politica de privacidad</string>
+        <string name="settings_open_source_licenses">Licencias de Codigo Abierto</string>
+        <string name="settings_open_terms">Abrir terminos de servicio</string>
+        <string name="settings_preferences">Preferencias</string>
+        <string name="settings_privacy_policy">Politica de Privacidad</string>
+        <string name="settings_select_language">Seleccionar %1$s</string>
+        <string name="settings_select_theme">Seleccionar %1$s</string>
+        <string name="settings_terms_of_service">Terminos de Servicio</string>
+        <string name="settings_theme">Tema</string>
+        <string name="settings_theme_current">Seleccionar tema, actualmente %1$s</string>
+        <string name="settings_theme_dark">Oscuro</string>
+        <string name="settings_theme_light">Claro</string>
+        <string name="settings_theme_select">Seleccionar Tema</string>
+        <string name="settings_theme_system_default">Predeterminado del Sistema</string>
+        <string name="settings_title">Configuracion</string>
+        <string name="settings_version">Just FYI v%1$s</string>
+        <string name="settings_view_licenses">Ver licencias de codigo abierto</string>
+        <string name="sti_chlamydia">Clamidia</string>
+        <string name="sti_gonorrhea">Gonorrea</string>
+        <string name="sti_herpes">Herpes</string>
+        <string name="sti_hiv">VIH</string>
+        <string name="sti_hpv">VPH</string>
+        <string name="sti_other">Otra</string>
+        <string name="sti_syphilis">Sifilis</string>
+        <string name="test_result_cancel">Cancelar</string>
+        <string name="test_result_description">Comparte tu resultado de prueba para informar a otros en esta cadena de exposicion.</string>
+        <string name="test_result_negative">Resultado Negativo</string>
+        <string name="test_result_positive">Resultado Positivo</string>
+        <string name="test_result_title">Reportar Resultado de Prueba</string>
+        <string name="validation_username_empty">El nombre de usuario no puede estar vacio</string>
+        <string name="validation_username_invalid">Caracteres invalidos</string>
+        <string name="validation_username_non_ascii">Solo se permiten caracteres ASCII</string>
+        <string name="validation_username_too_long">El nombre de usuario no puede exceder %1$d caracteres</string>
+
+    <plurals name="home_record_interactions_plural">
+        <item quantity="one">Registrar %1$d interaccion</item>
+        <item quantity="other">Registrar %1$d interacciones</item>
+    </plurals>
+
+    <!-- Accessibility: Component Level (additional) -->
+    <string name="cd_navigate_back">Navegar hacia atras</string>
+    <string name="cd_user_selected">Usuario seleccionado</string>
+    <string name="cd_user_not_selected">Usuario no seleccionado</string>
+    <string name="cd_signal_strength">Intensidad de senal: %1$s, %2$d de 4 barras</string>
+    <string name="cd_nearby_user">%1$s, %2$s</string>
+    <string name="cd_loading">Cargando</string>
+    <string name="cd_bluetooth_scanning">Bluetooth buscando usuarios cercanos</string>
+    <string name="cd_delete_report">Eliminar este reporte</string>
+
+    <!-- Accessibility: State Descriptions -->
+    <string name="state_id_revealed">ID revelado</string>
+    <string name="state_id_hidden">ID oculto</string>
+    <string name="state_selected">Seleccionado</string>
+    <string name="state_not_selected">No seleccionado</string>
+
+    <!-- Accessibility: Screen Level - HomeScreen -->
+    <string name="cd_scanning_animation">Buscando usuarios cercanos, pulso Bluetooth animado</string>
+    <string name="cd_empty_state_scanning">No se encontraron usuarios cercanos, la busqueda continua</string>
+    <string name="cd_permission_required">Se requiere permiso de Bluetooth para encontrar usuarios cercanos</string>
+
+    <!-- Accessibility: Screen Level - NotificationListScreen -->
+    <string name="cd_notification_type_exposure">Notificacion de posible exposicion</string>
+    <string name="cd_notification_type_update">Notificacion de actualizacion de cadena</string>
+    <string name="cd_notification_type_report_deleted">Notificacion de reporte retirado</string>
+    <string name="cd_notification_unread">No leida</string>
+    <string name="cd_notification_card">%1$s, %2$s, recibida %3$s</string>
+    <string name="cd_empty_notifications">Sin notificaciones, recibiras alertas cuando alguien en tu cadena de interacciones reporte un test positivo</string>
+
+    <!-- Accessibility: Screen Level - NotificationDetailScreen -->
+    <string name="cd_notification_status_exposure">Notificacion de posible exposicion a ITS</string>
+    <string name="cd_notification_status_update">Notificacion de actualizacion de estado de cadena</string>
+    <string name="cd_notification_retracted_banner">El reporte ha sido retirado por el reportador</string>
+    <string name="cd_tested_positive_status">Diste positivo para esta ITS</string>
+    <string name="cd_tested_negative_status">Diste negativo para esta ITS</string>
+    <string name="cd_section_heading">Seccion %1$s</string>
+
+    <!-- Accessibility: Screen Level - ProfileScreen -->
+    <string name="cd_anonymous_id_hidden">ID anonimo oculto, toca para revelar</string>
+    <string name="cd_anonymous_id_revealed">ID anonimo: %1$s</string>
+    <string name="cd_copy_id_to_clipboard">Copiar ID anonimo al portapapeles</string>
+    <string name="cd_view_interaction_history">Ver historial de interacciones</string>
+    <string name="cd_view_submitted_reports">Ver reportes enviados</string>
+    <string name="cd_open_settings">Abrir configuracion</string>
+    <string name="cd_account_recovery_section">Seccion de recuperacion de cuenta</string>
+    <string name="profile_submitted_reports">Reportes Enviados</string>
+
+    <!-- Accessibility: Screen Level - SettingsScreen -->
+    <string name="cd_settings_section_preferences">Seccion de preferencias</string>
+    <string name="cd_settings_section_legal">Seccion legal</string>
+    <string name="cd_settings_section_account">Seccion de cuenta</string>
+
+    <!-- Accessibility: Screen Level - ExposureReportFlowScreen -->
+    <string name="cd_report_progress">Progreso del reporte: paso %1$d de %2$d, %3$s</string>
+    <string name="cd_sti_checkbox">%1$s, incubacion hasta %2$d dias, %3$s</string>
+    <string name="cd_sti_checkbox_selected">seleccionado</string>
+    <string name="cd_sti_checkbox_not_selected">no seleccionado</string>
+    <string name="cd_date_picker_field">Seleccionar fecha del test, valor actual: %1$s</string>
+    <string name="cd_date_picker_not_set">no establecido</string>
+    <string name="cd_privacy_toggle_sti">Revelar tipo de ITS en notificacion, actualmente %1$s</string>
+    <string name="cd_privacy_toggle_date">Revelar fecha de exposicion en notificacion, actualmente %1$s</string>
+    <string name="cd_privacy_enabled">habilitado</string>
+    <string name="cd_privacy_disabled">deshabilitado</string>
+    <string name="cd_go_back">Volver al paso anterior</string>
+    <string name="cd_continue_next">Continuar al siguiente paso</string>
+    <string name="cd_submit_report">Enviar reporte de exposicion</string>
+
+    <!-- Notification: Report Deleted -->
+    <string name="notification_report_deleted">Reporte Retirado</string>
+    <string name="notification_report_deleted_description">Un reporte de exposicion anterior ha sido retirado por el reportador. Esto puede afectar tu evaluacion de riesgo.</string>
+    <string name="notification_report_retracted_header">Reporte de Exposicion Retirado</string>
+    <string name="notification_report_retracted_explanation">La persona que reporto esta exposicion ha retirado su reporte. Esto podria significar que el reporte original fue un error o que su situacion ha cambiado.</string>
+    <string name="notification_report_retracted_recommendation">Aunque esto puede reducir tu riesgo, considera consultar a un profesional de la salud si tienes preocupaciones.</string>
+
+    <!-- Notification: Tested Negative/Positive -->
+    <string name="notification_tested_negative">Resultado Negativo</string>
+    <string name="notification_tested_positive">Resultado Positivo</string>
+
+    <!-- Open Source Licenses Screen -->
+    <string name="licenses_title">Licencias de Codigo Abierto</string>
+    <string name="licenses_loading">Cargando licencias...</string>
+    <string name="licenses_error">Error al cargar licencias</string>
+    <string name="license_version">Version %1$s</string>
+    <string name="license_type">Licencia: %1$s</string>
+    <string name="license_author">Autor: %1$s</string>
+    <string name="license_website">Sitio web</string>
+    <string name="license_no_text">Texto de licencia no disponible</string>
+
+    <!-- Submitted Reports Screen -->
+    <string name="submitted_reports_title">Reportes Enviados</string>
+    <string name="submitted_reports_empty">Sin Reportes Aun</string>
+    <string name="submitted_reports_empty_description">Tus reportes de exposicion enviados apareceran aqui. Los reportes que envies para notificar a contactos seran listados.</string>
+    <string name="submitted_reports_loading">Cargando reportes...</string>
+    <string name="submitted_reports_delete_confirm_title">Eliminar Reporte?</string>
+    <string name="submitted_reports_delete_confirm_message">Esto eliminara tu reporte y notificara a los usuarios afectados que el reporte ha sido retirado. Esta accion no se puede deshacer.</string>
+    <string name="submitted_reports_delete_button">Eliminar Reporte</string>
+    <string name="submitted_reports_test_date">Fecha de Prueba: %1$s</string>
+    <string name="submitted_reports_submitted_on">Enviado: %1$s</string>
+    <string name="submitted_reports_privacy_level">Privacidad: %1$s</string>
+    <string name="submitted_reports_privacy_full">Divulgacion Completa</string>
+    <string name="submitted_reports_privacy_partial">Divulgacion Parcial</string>
+    <string name="submitted_reports_privacy_anonymous">Anonimo</string>
+</resources>

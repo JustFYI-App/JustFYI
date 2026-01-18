@@ -1,0 +1,99 @@
+-- Notification table stores exposure notifications received from the chain system
+-- chain_data contains JSON with the chain visualization data
+
+CREATE TABLE Notification (
+    id TEXT PRIMARY KEY NOT NULL,
+    type TEXT NOT NULL,
+    sti_type TEXT,
+    exposure_date INTEGER,
+    chain_data TEXT NOT NULL,
+    is_read INTEGER NOT NULL DEFAULT 0,
+    received_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL,
+    deleted_at INTEGER
+);
+
+-- Create index for unread notifications
+CREATE INDEX idx_notification_is_read ON Notification(is_read);
+
+-- Create index for ordering by date
+CREATE INDEX idx_notification_received_at ON Notification(received_at);
+
+-- Insert a notification
+insertNotification:
+INSERT INTO Notification (id, type, sti_type, exposure_date, chain_data, is_read, received_at, updated_at, deleted_at)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+-- Insert or replace notification (for sync/update operations)
+insertOrReplaceNotification:
+INSERT OR REPLACE INTO Notification (id, type, sti_type, exposure_date, chain_data, is_read, received_at, updated_at, deleted_at)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+-- Update read status
+updateReadStatus:
+UPDATE Notification
+SET is_read = ?, updated_at = ?
+WHERE id = ?;
+
+-- Mark as read
+markAsRead:
+UPDATE Notification
+SET is_read = 1, updated_at = ?
+WHERE id = ?;
+
+-- Mark all as read
+markAllAsRead:
+UPDATE Notification
+SET is_read = 1, updated_at = ?
+WHERE is_read = 0;
+
+-- Update chain data (for negative test updates from upstream in the chain)
+updateChainData:
+UPDATE Notification
+SET chain_data = ?, updated_at = ?
+WHERE id = ?;
+
+-- Delete a notification
+deleteNotification:
+DELETE FROM Notification
+WHERE id = ?;
+
+-- Delete all notifications (for GDPR compliance)
+deleteAllNotifications:
+DELETE FROM Notification;
+
+-- Delete notifications older than specified timestamp (120-day cleanup)
+deleteNotificationsOlderThan:
+DELETE FROM Notification
+WHERE received_at < ?;
+
+-- Get all notifications ordered by date (newest first)
+getAllNotifications:
+SELECT * FROM Notification
+ORDER BY received_at DESC;
+
+-- Get unread notifications
+getUnreadNotifications:
+SELECT * FROM Notification
+WHERE is_read = 0
+ORDER BY received_at DESC;
+
+-- Get unread count
+getUnreadCount:
+SELECT COUNT(*) FROM Notification
+WHERE is_read = 0;
+
+-- Get notification by id
+getNotificationById:
+SELECT * FROM Notification
+WHERE id = ?;
+
+-- Get notifications by type
+getNotificationsByType:
+SELECT * FROM Notification
+WHERE type = ?
+ORDER BY received_at DESC;
+
+-- Get total notification count
+getNotificationCount:
+SELECT COUNT(*) FROM Notification;

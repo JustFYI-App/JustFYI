@@ -1,0 +1,80 @@
+-- ExposureReport table stores test reports submitted by the user (both positive and negative)
+-- sti_types and contacted_ids are stored as JSON arrays
+
+CREATE TABLE ExposureReport (
+    id TEXT PRIMARY KEY NOT NULL,
+    sti_types TEXT NOT NULL,
+    test_date INTEGER NOT NULL,
+    privacy_level TEXT NOT NULL,
+    contacted_ids TEXT NOT NULL,
+    reported_at INTEGER NOT NULL,
+    synced_to_cloud INTEGER NOT NULL DEFAULT 0,
+    test_result TEXT NOT NULL DEFAULT 'POSITIVE'
+);
+
+-- Create index for unsynced reports
+CREATE INDEX idx_exposure_report_synced ON ExposureReport(synced_to_cloud);
+
+-- Create index for ordering by date
+CREATE INDEX idx_exposure_report_reported_at ON ExposureReport(reported_at);
+
+-- Insert a report
+insertReport:
+INSERT INTO ExposureReport (id, sti_types, test_date, privacy_level, contacted_ids, reported_at, synced_to_cloud, test_result)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+-- Insert or replace report
+insertOrReplaceReport:
+INSERT OR REPLACE INTO ExposureReport (id, sti_types, test_date, privacy_level, contacted_ids, reported_at, synced_to_cloud, test_result)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+-- Update sync status
+updateSyncStatus:
+UPDATE ExposureReport
+SET synced_to_cloud = ?
+WHERE id = ?;
+
+-- Mark as synced
+markAsSynced:
+UPDATE ExposureReport
+SET synced_to_cloud = 1
+WHERE id = ?;
+
+-- Delete a report
+deleteReport:
+DELETE FROM ExposureReport
+WHERE id = ?;
+
+-- Delete all reports (for GDPR compliance)
+deleteAllReports:
+DELETE FROM ExposureReport;
+
+-- Delete reports older than specified timestamp (120-day cleanup)
+deleteReportsOlderThan:
+DELETE FROM ExposureReport
+WHERE reported_at < ?;
+
+-- Get all reports ordered by date (newest first)
+getAllReports:
+SELECT * FROM ExposureReport
+ORDER BY reported_at DESC;
+
+-- Get pending sync reports (not yet synced to cloud)
+getPendingSyncReports:
+SELECT * FROM ExposureReport
+WHERE synced_to_cloud = 0
+ORDER BY reported_at ASC;
+
+-- Get report by id
+getReportById:
+SELECT * FROM ExposureReport
+WHERE id = ?;
+
+-- Get pending sync count
+getPendingSyncCount:
+SELECT COUNT(*) FROM ExposureReport
+WHERE synced_to_cloud = 0;
+
+-- Get total report count
+getReportCount:
+SELECT COUNT(*) FROM ExposureReport;

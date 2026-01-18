@@ -1,0 +1,35 @@
+-- Settings table stores key-value pairs for app configuration
+-- Keys: language_override, privacy_policy_accepted, terms_accepted
+
+CREATE TABLE Settings (
+    key TEXT PRIMARY KEY NOT NULL,
+    value TEXT NOT NULL
+);
+
+-- Insert or update a setting
+insertOrReplaceSetting:
+INSERT OR REPLACE INTO Settings (key, value)
+VALUES (?, ?);
+
+-- Get a setting by key
+getSettingByKey:
+SELECT value FROM Settings
+WHERE key = ?;
+
+-- Get all settings
+getAllSettings:
+SELECT * FROM Settings;
+
+-- Delete a setting
+deleteSetting:
+DELETE FROM Settings
+WHERE key = ?;
+
+-- Delete all settings (for GDPR compliance)
+deleteAllSettings:
+DELETE FROM Settings;
+
+-- Check if a setting exists
+settingExists:
+SELECT COUNT(*) FROM Settings
+WHERE key = ?;

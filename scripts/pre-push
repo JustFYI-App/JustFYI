@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Pre-push hook for Just FYI project
+# This script stashes uncommitted changes, runs tests, and restores the stash.
+#
+# Installation:
+#   Option 1: Run the setup script
+#     ./scripts/setup-hooks.sh
+#
+#   Option 2: Manual installation
+#     cp scripts/pre-push .git/hooks/pre-push
+#     chmod +x .git/hooks/pre-push
+#
+# To skip this hook (use sparingly):
+#   git push --no-verify
+#
+
+set -e
+
+echo "============================================"
+echo "Pre-push hook: Running tests before push..."
+echo "============================================"
+
+# Store whether we have uncommitted changes
+STASH_NAME="pre-push-hook-$(date +%s)"
+STASHED=false
+
+# Check if there are any uncommitted changes (staged or unstaged)
+if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo "Stashing uncommitted changes..."
+    git stash push -m "$STASH_NAME" --include-untracked
+    STASHED=true
+fi
+
+# Function to restore stash on exit (success or failure)
+restore_stash() {
+    if [ "$STASHED" = true ]; then
+        echo "Restoring stashed changes..."
+        # Find and pop the stash we created
+        STASH_INDEX=$(git stash list | grep "$STASH_NAME" | head -n 1 | cut -d: -f1)
+        if [ -n "$STASH_INDEX" ]; then
+            git stash pop "$STASH_INDEX"
+        fi
+    fi
+}
+
+# Set up trap to restore stash on any exit
+trap restore_stash EXIT
+
+# Run the tests
+echo ""
+echo "Running test suite..."
+echo ""
+
+if ./gradlew test --console=plain; then
+    echo ""
+    echo "============================================"
+    echo "All tests passed! Proceeding with push."
+    echo "============================================"
+    exit 0
+else
+    echo ""
+    echo "============================================"
+    echo "ERROR: Tests failed! Push aborted."
+    echo "Please fix the failing tests before pushing."
+    echo "============================================"
+    exit 1
+fi

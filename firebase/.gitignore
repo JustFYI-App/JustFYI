@@ -1,0 +1,13 @@
+# Firebase local files
+.firebase/
+.firebaserc.local
+
+# Local environment
+*.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

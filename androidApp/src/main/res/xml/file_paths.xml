@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+    FileProvider paths configuration for secure file sharing.
+
+    This allows the app to share files from the cache directory via content:// URIs
+    instead of file:// URIs, which is required for Android 7.0+ (API 24+).
+
+    The cache-path element makes the app's cache directory available for sharing.
+    Files placed in context.cacheDir can be shared using this provider.
+    -->
+    <cache-path
+        name="cache"
+        path="." />
+</paths>

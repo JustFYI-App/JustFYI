@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home Screen -->
+    <string name="home_title">Just FYI</string>
+    <string name="home_report_positive_test">Report Positive Test</string>
+    <string name="home_scanning">Scanning...</string>
+    <string name="home_scanning_description">Looking for nearby Just FYI users. Make sure Bluetooth is enabled on both devices.</string>
+    <string name="signal_excellent">Excellent signal</string>
+    <string name="signal_good">Good signal</string>
+    <string name="signal_fair">Fair signal</string>
+    <string name="signal_weak">Weak signal</string>
+
+    <!-- Profile Screen -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_your_anonymous_id">Your Anonymous ID</string>
+    <string name="profile_tap_to_reveal">Tap to reveal your ID</string>
+    <string name="profile_tap_to_hide">Tap to hide your ID</string>
+    <string name="profile_copy_id">Copy ID</string>
+    <string name="profile_id_copied">ID copied to clipboard</string>
+    <string name="profile_save_id_warning">Save this ID to recover your account if you reinstall the app.</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_username_not_set">Not set</string>
+    <string name="profile_edit_username">Edit Username</string>
+    <string name="profile_edit_username_description">Enter a new username (ASCII characters only, max 30 characters)</string>
+    <string name="profile_username_updated">Username updated</string>
+    <string name="profile_interaction_history">Interaction History</string>
+    <string name="profile_submitted_reports">Submitted Reports</string>
+    <string name="profile_account_recovery">Account Recovery</string>
+    <string name="profile_account_recovery_description">If you reinstalled the app, you can recover your account using your saved ID.</string>
+    <string name="profile_recover_account">Recover Account</string>
+    <string name="profile_recover_placeholder">XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX</string>
+    <string name="profile_account_recovered">Account recovered successfully</string>
+    <string name="profile_loading">Loading profile...</string>
+    <string name="profile_recover_enter_id">Enter your saved ID to recover your account</string>
+    <string name="profile_recover_button">Recover</string>
+
+    <!-- ID Backup Dialog -->
+    <string name="backup_confirm">I've Saved It</string>
+    <string name="backup_dialog_title">Back Up Your ID</string>
+    <string name="backup_dialog_description">Save this ID to recover your account if you reinstall the app. Without this ID, your account cannot be recovered.</string>
+    <string name="backup_your_id">Your ID:</string>
+    <string name="backup_remind_later">Remind Me Later</string>
+
+    <!-- Interaction History Screen -->
+    <string name="history_title">Interaction History</string>
+    <string name="history_no_interactions">No Interactions Yet</string>
+    <string name="history_no_interactions_description">Your recorded interactions will appear here. Use the home screen to discover nearby users and record interactions.</string>
+    <string name="history_retention_notice">Interactions are automatically deleted after 180 days</string>
+    <string name="history_days_left">%1$dd left</string>
+    <string name="history_pending_sync">Pending sync</string>
+    <string name="history_loading">Loading interactions...</string>
+    <string name="history_at">at</string>
+
+    <!-- Interaction Detail Screen -->
+    <string name="interaction_detail_title">Interaction Detail</string>
+    <string name="interaction_detail_id_message">Interaction ID: %1$s</string>
+
+    <!-- Submitted Reports Screen -->
+    <string name="submitted_reports_title">Submitted Reports</string>
+    <string name="submitted_reports_empty">No Reports Yet</string>
+    <string name="submitted_reports_empty_description">Your submitted exposure reports will appear here. Reports you submit to notify contacts will be listed.</string>
+    <string name="submitted_reports_loading">Loading reports...</string>
+    <string name="submitted_reports_delete_confirm_title">Delete Report?</string>
+    <string name="submitted_reports_delete_confirm_message">This will delete your report and notify impacted users that the report has been retracted. This action cannot be undone.</string>
+    <string name="submitted_reports_delete_button">Delete Report</string>
+    <string name="submitted_reports_test_date">Test Date: %1$s</string>
+    <string name="submitted_reports_submitted_on">Submitted: %1$s</string>
+    <string name="submitted_reports_privacy_level">Privacy: %1$s</string>
+    <string name="submitted_reports_privacy_full">Full Disclosure</string>
+    <string name="submitted_reports_privacy_partial">Partial Disclosure</string>
+    <string name="submitted_reports_privacy_anonymous">Anonymous</string>
+    <string name="submitted_reports_test_positive">Positive Test</string>
+    <string name="submitted_reports_test_negative">Negative Test</string>
+
+    <!-- Notifications Screen -->
+    <string name="notifications_title">Notifications</string>
+    <string name="notifications_empty">No Notifications</string>
+    <string name="notifications_loading">Loading notifications...</string>
+    <string name="notification_potential_exposure">Potential Exposure</string>
+    <string name="notification_chain_update">Chain Update</string>
+    <string name="notifications_unread_count">%1$d unread notification(s)</string>
+    <string name="notifications_will_receive">You'll receive notifications here when someone in your interaction chain reports a positive test.</string>
+    <string name="notification_generic">Notification</string>
+    <string name="notification_exposure_description">You may have been exposed to %1$s. Tap for details and recommended actions.</string>
+    <string name="notification_exposure_description_generic">You may have been exposed to an STI. Tap for details and recommended actions.</string>
+    <string name="notification_update_description">Someone in your exposure chain has updated their status.</string>
+    <string name="notification_tap_details">Tap to view details.</string>
+    <string name="notification_just_now">Just now</string>
+    <string name="notification_minutes_ago">%1$dm ago</string>
+    <string name="notification_hours_ago">%1$dh ago</string>
+    <string name="notification_days_ago">%1$dd ago</string>
+
+    <!-- Notification: Report Deleted -->
+    <string name="notification_report_deleted">Report Retracted</string>
+    <string name="notification_report_deleted_description">A previous exposure report has been retracted by the reporter. This may affect your risk assessment.</string>
+    <string name="notification_report_retracted_header">Exposure Report Retracted</string>
+    <string name="notification_report_retracted_explanation">The person who reported this exposure has retracted their report. This could mean the original report was made in error or their situation has changed.</string>
+    <string name="notification_report_retracted_recommendation">While this may lower your risk, consider consulting a healthcare provider if you have concerns.</string>
+
+    <!-- Notification: Tested Negative -->
+    <string name="notification_tested_negative">Tested Negative</string>
+
+    <!-- Notification: Tested Positive -->
+    <string name="notification_tested_positive">Tested Positive</string>
+
+    <!-- Notification Detail Screen -->
+    <string name="notification_detail_title">Notification Details</string>
+    <string name="notification_sti_exposure">Potential STI Exposure</string>
+    <string name="notification_chain_status_update">Chain Status Update</string>
+    <string name="notification_received">Received: %1$s</string>
+    <string name="notification_sti_type">STI Type</string>
+    <string name="notification_exposure_date">Potential Exposure Date</string>
+    <string name="notification_recommended_actions">Recommended Actions</string>
+    <string name="notification_action_1">1. Get tested as soon as possible</string>
+    <string name="notification_action_2">2. Avoid unprotected contact until you receive results</string>
+    <string name="notification_action_3">3. Contact a healthcare provider for guidance</string>
+    <string name="notification_action_4">4. Consider informing recent partners</string>
+    <string name="notification_mark_as_tested">Mark as Tested</string>
+    <string name="notification_marked_as_tested">Marked as Tested</string>
+    <string name="notification_test_status_shared">Your test status will be shared with others in this exposure chain to help inform their risk assessment.</string>
+    <string name="notification_marked_success">Your test result has been shared with others in this chain.</string>
+    <string name="notification_loading">Loading notification...</string>
+
+    <!-- Test Result Dialog -->
+    <string name="test_result_title">Report Test Result</string>
+    <string name="test_result_description">Share your test result to help inform others in this exposure chain.</string>
+    <string name="test_result_positive">Positive Result</string>
+    <string name="test_result_negative">Negative Result</string>
+    <string name="test_result_cancel">Cancel</string>
+
+    <!-- Chain Visualization -->
+    <string name="chain_title">Exposure Chain</string>
+    <string name="chain_you">You</string>
+    <string name="chain_someone">Someone</string>
+    <string name="chain_not_available">Chain information not available</string>
+    <string name="chain_no_test">no test</string>
+    <string name="chain_negative_test_notice">Someone in this chain tested negative, which may reduce your risk.</string>
+
+    <!-- Exposure Report Flow -->
+    <string name="report_title">Report Positive Test</string>
+    <string name="report_step_count">Step %1$d of %2$d</string>
+    <string name="report_cancel">Cancel Report</string>
+    <string name="report_cancel_message">Are you sure you want to cancel? Your progress will be lost.</string>
+    <string name="report_yes_cancel">Yes, Cancel</string>
+    <string name="report_continue">Continue</string>
+
+    <!-- Step 1: STI Selection -->
+    <string name="report_step1_title">Select STI Type(s)</string>
+    <string name="report_step1_description">Select all STIs you tested positive for. This information will be used to calculate the exposure window.</string>
+    <string name="report_step1_name">STI Selection</string>
+    <string name="report_incubation">Incubation: up to %1$d days</string>
+    <string name="sti_hiv">HIV</string>
+    <string name="sti_syphilis">Syphilis</string>
+    <string name="sti_gonorrhea">Gonorrhea</string>
+    <string name="sti_chlamydia">Chlamydia</string>
+    <string name="sti_hpv">HPV</string>
+    <string name="sti_herpes">Herpes</string>
+    <string name="sti_other">Other</string>
+
+    <!-- Step 2: Date Selection -->
+    <string name="report_step2_title">When did you test positive?</string>
+    <string name="report_step2_description">Select the date of your positive test result.</string>
+    <string name="report_step2_name">Test Date</string>
+    <string name="report_tap_to_select_date">Tap to select date</string>
+    <string name="report_date_future">Date cannot be in the future</string>
+    <string name="report_date_beyond_retention">Date must be within the last 180 days</string>
+    <string name="report_select">Select</string>
+
+    <!-- Step 3: Privacy Options -->
+    <string name="report_step5_title">Privacy Options</string>
+    <string name="report_step5_description">Choose what information to include in the notifications sent to your contacts.</string>
+    <string name="report_step5_name">Privacy Options</string>
+    <string name="report_disclose_sti">Disclose STI Type</string>
+    <string name="report_disclose_sti_description">Include the specific STI type in the notification. If disabled, contacts will only see a generic 'exposure' notification.</string>
+    <string name="report_disclose_date">Disclose Exposure Date</string>
+    <string name="report_disclose_date_description">Include the potential exposure date in the notification. If disabled, contacts will see a date range instead.</string>
+    <string name="report_privacy_note">Privacy Note</string>
+    <string name="report_privacy_note_description">Your identity is never revealed to your contacts. All notifications are anonymous.</string>
+
+    <!-- Step 6 (now Step 4): Review -->
+    <string name="report_step6_title">Review Your Report</string>
+    <string name="report_step6_description">Please review the details before submitting.</string>
+    <string name="report_step6_name">Review</string>
+    <string name="report_review_sti_types">STI Types</string>
+    <string name="report_review_test_date">Test Date</string>
+    <string name="report_review_privacy">Privacy Options</string>
+    <string name="report_review_disclosed">Disclosed</string>
+    <string name="report_review_hidden">Hidden</string>
+    <string name="report_submitting">Submitting report...</string>
+    <string name="report_submit">Submit Report</string>
+    <string name="report_not_set">Not set</string>
+    <string name="report_sti_type_label">STI Type: %1$s</string>
+    <string name="report_exposure_date_label">Exposure Date: %1$s</string>
+
+    <!-- Review Step: Automatic Notification -->
+    <string name="report_review_auto_notify">Notifications</string>
+    <string name="report_review_auto_notify_description">Your contacts will be notified automatically based on your interaction history. The system determines who to notify without requiring manual contact selection.</string>
+
+    <!-- Navigation -->
+    <string name="nav_back">Back</string>
+    <string name="nav_next">Next</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_preferences">Preferences</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_german">Deutsch</string>
+    <string name="settings_legal">Legal</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_terms_of_service">Terms of Service</string>
+    <string name="settings_open_source_licenses">Open Source Licenses</string>
+    <string name="settings_account">Account</string>
+    <string name="settings_delete_account">Delete Account</string>
+    <string name="settings_delete_account_subtitle">Permanently delete all your data</string>
+    <string name="settings_version">Just FYI v%1$s</string>
+    <string name="settings_language_select">Select Language</string>
+    <string name="settings_language_changed">Language changed. Some changes may require app restart.</string>
+    <string name="settings_loading">Loading settings...</string>
+    <string name="settings_deleting">Deleting account...</string>
+    <string name="settings_language_current">Select language, currently %1$s</string>
+    <string name="settings_open_privacy_policy">Open privacy policy</string>
+    <string name="settings_open_terms">Open terms of service</string>
+    <string name="settings_view_licenses">View open source licenses</string>
+    <string name="settings_delete_permanently">Delete account permanently</string>
+    <string name="settings_select_language">Select %1$s</string>
+    <string name="settings_language_system_default">System Default</string>
+
+    <!-- Settings: Data Export -->
+    <string name="settings_export_data">Export My Data</string>
+    <string name="settings_export_data_subtitle">Download a copy of your data</string>
+    <string name="settings_export_data_description">Export all your data as a ZIP file</string>
+    <string name="settings_exporting">Exporting data...</string>
+    <string name="settings_export_error">Export failed. Please try again.</string>
+
+    <!-- Theme Settings -->
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_select">Select Theme</string>
+    <string name="settings_theme_system_default">System Default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_current">Select theme, currently %1$s</string>
+    <string name="settings_select_theme">Select %1$s</string>
+
+    <!-- Delete Account Dialog -->
+    <string name="delete_title">Delete Account</string>
+    <string name="delete_message">This action is irreversible. All your data will be deleted and cannot be recovered. This includes:\n\n- All recorded interactions\n- All notifications\n- All exposure reports\n- Your anonymous ID\n\nAre you sure you want to delete your account?</string>
+    <string name="delete_confirm">Delete Account</string>
+
+    <!-- Permission Dialog -->
+    <string name="permission_bluetooth_title">Bluetooth Permission Required</string>
+    <string name="permission_bluetooth_message">Just FYI needs Bluetooth permission to discover nearby users and record interactions.</string>
+    <string name="permission_grant">Grant Permission</string>
+
+    <!-- Common Strings -->
+    <string name="common_cancel">Cancel</string>
+    <string name="common_save">Save</string>
+    <string name="common_retry">Retry</string>
+
+    <!-- Plurals -->
+    <plurals name="home_record_interactions_plural">
+        <item quantity="one">Record %1$d Interaction</item>
+        <item quantity="other">Record %1$d Interactions</item>
+    </plurals>
+
+    <!-- Username Validation -->
+    <string name="validation_username_empty">Username cannot be empty</string>
+    <string name="validation_username_too_long">Username cannot exceed %1$d characters</string>
+    <string name="validation_username_non_ascii">Only ASCII characters allowed</string>
+    <string name="validation_username_invalid">Invalid characters</string>
+
+    <!-- Accessibility: Component Level -->
+    <string name="cd_notifications">Notifications</string>
+    <string name="cd_profile">Profile</string>
+    <string name="cd_edit_username">Edit username</string>
+    <string name="cd_reveal_id">Reveal ID</string>
+    <string name="cd_hide_id">Hide ID</string>
+    <string name="cd_cancel">Cancel</string>
+    <string name="cd_delete_report">Delete this report</string>
+    <string name="cd_navigate_back">Navigate back</string>
+    <string name="cd_user_selected">User selected</string>
+    <string name="cd_user_not_selected">User not selected</string>
+    <string name="cd_signal_strength">Signal strength: %1$s, %2$d of 4 bars</string>
+    <string name="cd_nearby_user">%1$s, %2$s</string>
+    <string name="cd_loading">Loading</string>
+    <string name="cd_bluetooth_scanning">Bluetooth scanning for nearby users</string>
+
+    <!-- Accessibility: State Descriptions -->
+    <string name="state_id_revealed">ID revealed</string>
+    <string name="state_id_hidden">ID hidden</string>
+    <string name="state_selected">Selected</string>
+    <string name="state_not_selected">Not selected</string>
+
+    <!-- Accessibility: Screen Level - HomeScreen -->
+    <string name="cd_scanning_animation">Scanning for nearby users, animated Bluetooth pulse</string>
+    <string name="cd_empty_state_scanning">No nearby users found, scanning continues</string>
+    <string name="cd_permission_required">Bluetooth permission required to discover nearby users</string>
+
+    <!-- Accessibility: Screen Level - NotificationListScreen -->
+    <string name="cd_notification_type_exposure">Potential exposure notification</string>
+    <string name="cd_notification_type_update">Chain update notification</string>
+    <string name="cd_notification_type_report_deleted">Report retracted notification</string>
+    <string name="cd_notification_unread">Unread</string>
+    <string name="cd_notification_card">%1$s, %2$s, received %3$s</string>
+    <string name="cd_empty_notifications">No notifications, you will receive alerts when someone in your interaction chain reports a positive test</string>
+
+    <!-- Accessibility: Screen Level - NotificationDetailScreen -->
+    <string name="cd_notification_status_exposure">Potential STI exposure notification</string>
+    <string name="cd_notification_status_update">Chain status update notification</string>
+    <string name="cd_notification_retracted_banner">Report has been retracted by the reporter</string>
+    <string name="cd_tested_positive_status">You tested positive for this STI</string>
+    <string name="cd_tested_negative_status">You tested negative for this STI</string>
+    <string name="cd_section_heading">%1$s section</string>
+
+    <!-- Accessibility: Screen Level - ProfileScreen -->
+    <string name="cd_anonymous_id_hidden">Anonymous ID is hidden, tap to reveal</string>
+    <string name="cd_anonymous_id_revealed">Anonymous ID: %1$s</string>
+    <string name="cd_copy_id_to_clipboard">Copy anonymous ID to clipboard</string>
+    <string name="cd_view_interaction_history">View interaction history</string>
+    <string name="cd_view_submitted_reports">View submitted reports</string>
+    <string name="cd_open_settings">Open settings</string>
+    <string name="cd_account_recovery_section">Account recovery section</string>
+
+    <!-- Accessibility: Screen Level - SettingsScreen -->
+    <string name="cd_settings_section_preferences">Preferences section</string>
+    <string name="cd_settings_section_legal">Legal section</string>
+    <string name="cd_settings_section_account">Account section</string>
+
+    <!-- Accessibility: Screen Level - ExposureReportFlowScreen -->
+    <string name="cd_report_progress">Report progress: step %1$d of %2$d, %3$s</string>
+    <string name="cd_sti_checkbox">%1$s, incubation up to %2$d days, %3$s</string>
+    <string name="cd_sti_checkbox_selected">selected</string>
+    <string name="cd_sti_checkbox_not_selected">not selected</string>
+    <string name="cd_date_picker_field">Select test date, current value: %1$s</string>
+    <string name="cd_date_picker_not_set">not set</string>
+    <string name="cd_privacy_toggle_sti">Disclose STI type in notification, currently %1$s</string>
+    <string name="cd_privacy_toggle_date">Disclose exposure date in notification, currently %1$s</string>
+    <string name="cd_privacy_enabled">enabled</string>
+    <string name="cd_privacy_disabled">disabled</string>
+    <string name="cd_go_back">Go back to previous step</string>
+    <string name="cd_continue_next">Continue to next step</string>
+    <string name="cd_submit_report">Submit exposure report</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_step_count">Step %1$d of %2$d</string>
+
+    <!-- Onboarding Step Names -->
+    <string name="onboarding_step_welcome">Welcome</string>
+    <string name="onboarding_step_id_backup">ID Backup</string>
+    <string name="onboarding_step_permissions">Permissions</string>
+    <string name="onboarding_step_username">Username</string>
+
+    <!-- Onboarding Welcome Step -->
+    <string name="onboarding_welcome_title">Welcome to Just FYI</string>
+    <string name="onboarding_welcome_description">Just FYI is an anonymous contact tracing app that helps you stay informed about potential health exposures while protecting your privacy.</string>
+    <string name="onboarding_loading_account">Setting up your account...</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_get_started_description">Create a new anonymous account to start using Just FYI. Your identity is protected with a unique anonymous ID.</string>
+    <string name="onboarding_create_new_account">Create New Account</string>
+    <string name="onboarding_already_have_account">Already have an account?</string>
+    <string name="onboarding_recover_existing">Recover Existing Account</string>
+    <string name="onboarding_try_again">Try Again</string>
+    <string name="onboarding_your_anonymous_id">Your Anonymous ID</string>
+    <string name="onboarding_id_warning">This ID is the only way to recover your account if you reinstall the app. Make sure to save it in the next step.</string>
+    <string name="onboarding_start_over">Start Over</string>
+    <string name="onboarding_recover_title">Recover Your Account</string>
+    <string name="onboarding_recover_description">Enter your previously saved anonymous ID to recover your account.</string>
+    <string name="onboarding_anonymous_id">Anonymous ID</string>
+    <string name="onboarding_anonymous_id_placeholder">e.g., A961-8607-328D-4599-...</string>
+    <string name="onboarding_recover_account">Recover Account</string>
+    <string name="onboarding_create_new_instead">Create New Account Instead</string>
+
+    <!-- Onboarding ID Backup Step -->
+    <string name="onboarding_backup_title">Back Up Your ID</string>
+    <string name="onboarding_backup_description">Save this ID in a secure location. You'll need it to recover your account if you reinstall the app.</string>
+    <string name="onboarding_backup_warning">Without this ID, your account cannot be recovered. There is no password reset or email recovery option.</string>
+    <string name="onboarding_backup_confirm">I have saved my ID in a secure location</string>
+
+    <!-- Onboarding Permissions Step -->
+    <string name="onboarding_permissions_title">App Permissions</string>
+    <string name="onboarding_permissions_description">Just FYI needs a few permissions to work properly. You can skip this step, but some features will be limited.</string>
+    <string name="onboarding_permission_bluetooth">Bluetooth</string>
+    <string name="onboarding_permission_bluetooth_description">Bluetooth is required to detect nearby Just FYI users and securely exchange information during interactions.</string>
+    <string name="onboarding_permission_notifications">Notifications</string>
+    <string name="onboarding_permission_notifications_description">Receive alerts when you may have been exposed to an STI. Notifications are anonymous and protect your privacy.</string>
+    <string name="onboarding_permissions_skip_info">You can skip permissions now and enable them later in Settings, but some features will be unavailable.</string>
+    <string name="onboarding_limited_functionality_title">Limited Functionality</string>
+    <string name="onboarding_limited_functionality_message">Without permissions, Just FYI won't be able to discover nearby users or send you exposure notifications. You can grant permissions later in Settings.</string>
+    <string name="onboarding_continue_anyway">Continue Anyway</string>
+    <string name="onboarding_grant_permissions">Grant Permissions</string>
+
+    <!-- Onboarding Username Step -->
+    <string name="onboarding_username_title">Choose a Username</string>
+    <string name="onboarding_username_description">Your username will be visible to other Just FYI users when you record interactions. This is optional - you can use the app anonymously.</string>
+    <string name="onboarding_username_label">Username</string>
+    <string name="onboarding_username_placeholder">Enter a username</string>
+    <string name="onboarding_username_requirements">Requirements: ASCII characters only, max 30 characters</string>
+    <string name="onboarding_username_skip_info">If you skip this step, other users will see you as Anonymous. You can set a username later in your Profile.</string>
+
+    <!-- Onboarding Navigation -->
+    <string name="onboarding_skip_for_now">Skip for Now</string>
+    <string name="onboarding_skip_and_finish">Skip and Finish</string>
+    <string name="onboarding_complete_setup">Complete Setup</string>
+
+    <!-- Open Source Licenses Screen -->
+    <string name="licenses_title">Open Source Licenses</string>
+    <string name="licenses_loading">Loading licenses...</string>
+    <string name="licenses_error">Failed to load licenses</string>
+    <string name="license_version">Version %1$s</string>
+    <string name="license_type">License: %1$s</string>
+    <string name="license_author">Author: %1$s</string>
+    <string name="license_website">Website</string>
+    <string name="license_no_text">License text not available</string>
+</resources>
