@@ -1,0 +1,23 @@
+{
+  "HIV": {
+    "maxDays": 30
+  },
+  "SYPHILIS": {
+    "maxDays": 90
+  },
+  "GONORRHEA": {
+    "maxDays": 14
+  },
+  "CHLAMYDIA": {
+    "maxDays": 21
+  },
+  "HPV": {
+    "maxDays": 180
+  },
+  "HERPES": {
+    "maxDays": 21
+  },
+  "OTHER": {
+    "maxDays": 30
+  }
+}

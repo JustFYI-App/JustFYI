@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colors from app icon -->
+    <color name="brand_primary">#FF6370D8</color>
+    <color name="brand_primary_light">#FF8E97DF</color>
+    <color name="brand_accent">#FFF06236</color>
+
+    <!-- Base application theme (Dark) -->
+    <style name="Theme.JustFyi" parent="android:Theme.Material.NoActionBar">
+        <!-- Splash screen background color (Dark) -->
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Splash screen colors (Dark) -->
+    <color name="splash_background">#FF1B1B1F</color>
+</resources>

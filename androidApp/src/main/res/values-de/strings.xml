@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just FYI</string>
+
+    <!-- FCM Notification Channels (needed for Android system notifications) -->
+    <string name="channel_exposure_notifications">Expositionsbenachrichtigungen</string>
+    <string name="channel_exposure_notifications_description">Wichtige Benachrichtigungen ueber moegliche STI-Exposition</string>
+    <string name="channel_updates">Aktualisierungen</string>
+    <string name="channel_updates_description">Allgemeine Aktualisierungen und Statusaenderungen der Kette</string>
+
+    <!-- FCM localization keys (must match server-side keys in pushNotification.ts) -->
+    <string name="notification_exposure_title">Mögliche Exposition</string>
+    <string name="notification_exposure_body">Sie könnten einer STI ausgesetzt gewesen sein. Tippen Sie für Details.</string>
+    <string name="notification_update_title">Ketten-Aktualisierung</string>
+    <string name="notification_update_body">Jemand in Ihrer Expositionskette hat seinen Status aktualisiert.</string>
+    <string name="notification_report_deleted_title">Bericht zurückgezogen</string>
+    <string name="notification_report_deleted_body">Ein Bericht, der Sie betroffen haben könnte, wurde zurückgezogen.</string>
+
+    <!-- Generic fallback -->
+    <string name="notification_generic_body">Sie haben eine neue Benachrichtigung. Tippen Sie für Details.</string>
+
+    <!-- Legacy notification strings (can be removed after migration) -->
+    <string name="notification_potential_exposure">Mögliche Exposition</string>
+    <string name="notification_chain_update">Ketten-Aktualisierung</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+</resources>

@@ -1,0 +1,155 @@
+[versions]
+# App version - single source of truth for Android and iOS
+app-version = "0.9.0"
+app-versionCode = "3"
+
+agp = "8.13.2"
+android-compileSdk = "36"
+android-minSdk = "31"
+android-targetSdk = "36"
+androidx-activity = "1.12.2"
+androidx-core = "1.17.0"
+androidx-lifecycle = "2.9.6"
+androidx-navigation = "2.9.6"
+androidx-testExt = "1.3.0"
+composeMultiplatform = "1.10.0"
+composeMaterial3 = "1.9.0"
+composeMaterialIconsExtended = "1.7.3"
+junit = "4.13.2"
+kotlin = "2.3.0"
+kotlinxSerialization = "1.9.0"
+kotlinxDatetime = "0.7.1"
+metro = "0.9.4"
+coroutines = "1.10.2"
+# Firebase
+firebaseBom = "34.8.0"
+googleServices = "4.4.4"
+# GitLive Firebase SDK (multiplatform)
+gitliveFirebase = "2.4.0"
+# SQLDelight
+sqldelight = "2.2.1"
+# SQLCipher for database encryption (newer sqlcipher-android library)
+sqlcipher = "4.12.0"
+# DataStore for preferences
+datastore = "1.2.0"
+# Tink for encryption (replacing deprecated androidx.security.crypto)
+tink = "1.20.0"
+# JetBrains Multiplatform Navigation
+jetbrainsNavigation = "2.9.1"
+# Baseline Profile
+baselineprofile = "1.4.1"
+benchmark = "1.4.1"
+uiautomator = "2.3.0"
+testRunner = "1.7.0"
+# Code Quality Tools
+ktlint = "14.0.1"
+detekt = "1.23.8"
+detektComposeRules = "0.5.3"
+# ConstraintLayout for Compose Multiplatform
+constraintlayoutComposeMultiplatform = "0.6.1"
+# Compose BOM for testing
+composeBom = "2026.01.00"
+# AboutLibraries for open source license display
+aboutlibraries = "13.2.1"
+# Roborazzi for screenshot testing (JVM-based, uses Robolectric)
+roborazzi = "1.56.0"
+robolectric = "4.16"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-testExt-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-testExt" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+# Firebase libraries (using BoM for Android-specific initialization)
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+# Firebase libraries - KTX libraries deprecated in BoM 34.0.0+, use main modules instead
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
+firebase-functions = { module = "com.google.firebase:firebase-functions" }
+# GitLive Firebase SDK (multiplatform - for commonMain)
+gitlive-firebase-auth = { module = "dev.gitlive:firebase-auth", version.ref = "gitliveFirebase" }
+gitlive-firebase-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "gitliveFirebase" }
+gitlive-firebase-messaging = { module = "dev.gitlive:firebase-messaging", version.ref = "gitliveFirebase" }
+gitlive-firebase-functions = { module = "dev.gitlive:firebase-functions", version.ref = "gitliveFirebase" }
+gitlive-firebase-common = { module = "dev.gitlive:firebase-common", version.ref = "gitliveFirebase" }
+# JetBrains Multiplatform Navigation
+jetbrains-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrainsNavigation" }
+# SQLDelight libraries
+sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
+sqldelight-native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
+sqldelight-sqlite-driver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
+sqldelight-coroutines-extensions = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
+# SQLCipher for Android database encryption (newer library)
+sqlcipher-android = { module = "net.zetetic:sqlcipher-android", version.ref = "sqlcipher" }
+# DataStore for preferences
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+# Tink for encryption (replacing deprecated androidx.security.crypto)
+tink-android = { module = "com.google.crypto.tink:tink-android", version.ref = "tink" }
+# Baseline Profile dependencies
+androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "benchmark" }
+androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "benchmark" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "testRunner" }
+androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "uiautomator" }
+# Code Quality Tools
+detekt-compose-rules = { module = "io.nlopez.compose.rules:detekt", version.ref = "detektComposeRules" }
+# ConstraintLayout for Compose Multiplatform
+constraintlayout-compose-multiplatform = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version.ref = "constraintlayoutComposeMultiplatform" }
+# JetBrains Compose Multiplatform
+jetbrains-compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
+jetbrains-compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
+jetbrains-compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMaterial3" }
+jetbrains-compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
+jetbrains-compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "composeMultiplatform" }
+jetbrains-compose-ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
+jetbrains-compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
+jetbrains-compose-material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "composeMaterialIconsExtended" }
+# Compose Testing
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+# AboutLibraries for open source license display
+aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutlibraries" }
+aboutlibraries-compose-m3 = { module = "com.mikepenz:aboutlibraries-compose-m3", version.ref = "aboutlibraries" }
+# Roborazzi for screenshot testing (JVM-based, uses Robolectric)
+roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazzi" }
+roborazzi-compose = { module = "io.github.takahirom.roborazzi:roborazzi-compose", version.ref = "roborazzi" }
+roborazzi-junit-rule = { module = "io.github.takahirom.roborazzi:roborazzi-junit-rule", version.ref = "roborazzi" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+# Baseline Profile plugins
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }
+androidTest = { id = "com.android.test", version.ref = "agp" }
+# Code Quality plugins
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+# AboutLibraries plugin for generating license information
+aboutlibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutlibraries" }
+# Roborazzi plugin for screenshot testing
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }

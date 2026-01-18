@@ -1,0 +1,201 @@
+rules_version = '2';
+
+/**
+ * Firestore Security Rules for Just FYI
+ * Target Database: default (EU region - eur3)
+ * Updated: 2025-01-16 - Cloud Functions for all write operations
+ *
+ * Privacy-first STI exposure notification app.
+ * All data is anonymized - users are identified only by anonymous IDs.
+ *
+ * CLOUD FUNCTION ARCHITECTURE:
+ * ============================
+ * All report operations now go through Cloud Functions for security:
+ * - reportPositiveTest: Creates positive test reports
+ * - reportNegativeTest: Creates negative test reports
+ * - deleteExposureReport: Deletes reports with cleanup
+ *
+ * DOMAIN-SEPARATED HASHING:
+ * ========================
+ * To prevent cross-collection correlation attacks if the database is breached,
+ * UIDs are hashed with domain-specific salt prefixes:
+ * - interactions.ownerId: SHA256(uid) - no salt (BLE compatibility)
+ * - notifications.recipientId: SHA256("notification:" + uid)
+ * - reports.reporterId: SHA256("report:" + uid)
+ *
+ * Security rules compute hashes SERVER-SIDE using request.auth.uid.
+ * Pre-computed hashes from clients cannot bypass authorization.
+ */
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ========================================================================
+    // HELPER FUNCTIONS - Authentication
+    // ========================================================================
+
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if the requesting user owns the document
+    // Used for users collection where document ID is unhashed UID
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Helper function to check if request is from Cloud Functions (service account)
+    function isCloudFunction() {
+      return request.auth != null &&
+             request.auth.token.firebase != null &&
+             request.auth.token.firebase.sign_in_provider == "service_account";
+    }
+
+    // ========================================================================
+    // HELPER FUNCTIONS - Domain-Separated Hashing
+    // ========================================================================
+
+    /**
+     * Hash UID for interactions.ownerId field.
+     * Formula: SHA256(uid)
+     * No salt prefix - maintains BLE compatibility with partnerAnonymousId.
+     *
+     * @param uid - The Firebase UID to hash (from request.auth.uid)
+     * @returns SHA-256 hash as lowercase hex string
+     */
+    function hashForInteraction(uid) {
+      return hashing.sha256(uid.toUtf8()).toHexString();
+    }
+
+    /**
+     * Hash UID for notifications.recipientId field.
+     * Formula: SHA256("notification:" + uid)
+     * Uses "notification:" salt prefix for domain separation.
+     *
+     * @param uid - The Firebase UID to hash (from request.auth.uid)
+     * @returns SHA-256 hash as lowercase hex string
+     */
+    function hashForNotification(uid) {
+      return hashing.sha256(("notification:" + uid).toUtf8()).toHexString();
+    }
+
+    /**
+     * Hash UID for reports.reporterId field.
+     * Formula: SHA256("report:" + uid)
+     * Uses "report:" salt prefix for domain separation.
+     *
+     * @param uid - The Firebase UID to hash (from request.auth.uid)
+     * @returns SHA-256 hash as lowercase hex string
+     */
+    function hashForReport(uid) {
+      return hashing.sha256(("report:" + uid).toUtf8()).toHexString();
+    }
+
+    // ========================================================================
+    // COLLECTION RULES
+    // ========================================================================
+
+    /**
+     * Users Collection
+     * Path: /users/{userId}
+     *
+     * Document ID is the original case Firebase UID (matches request.auth.uid).
+     * The anonymousId field stores the same value for display/backup.
+     * NOTE: Users collection is NOT hashed - required for Firebase Auth integration.
+     *
+     * - Users can read/write their own document
+     * - Cloud Functions can read/write for notification delivery
+     * - Authenticated users can query by username for uniqueness checks
+     */
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isCloudFunction();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+
+    /**
+     * Interactions Collection
+     * Path: /interactions/{interactionId}
+     *
+     * DOMAIN-SEPARATED HASHING:
+     * - ownerId is stored as SHA256(uid) - no salt prefix
+     * - Security rules compute hash server-side from request.auth.uid
+     * - This matches BLE partnerAnonymousId hashing for compatibility
+     *
+     * - Users can only read their own interactions (where computed hash matches ownerId)
+     * - Users can create interactions with their own hashed ownerId
+     * - Cloud Functions can read for chain propagation
+     */
+    match /interactions/{interactionId} {
+      allow read: if isAuthenticated() &&
+                    (hashForInteraction(request.auth.uid).lower() == resource.data.ownerId.lower() ||
+                     isCloudFunction());
+      allow create: if isAuthenticated() &&
+                      request.resource.data.ownerId.lower() == hashForInteraction(request.auth.uid).lower();
+      allow update: if isAuthenticated() &&
+                      hashForInteraction(request.auth.uid).lower() == resource.data.ownerId.lower();
+      allow delete: if isAuthenticated() &&
+                      hashForInteraction(request.auth.uid).lower() == resource.data.ownerId.lower();
+    }
+
+    /**
+     * Notifications Collection
+     * Path: /notifications/{notificationId}
+     *
+     * DOMAIN-SEPARATED HASHING:
+     * - recipientId is stored as SHA256("notification:" + uid)
+     * - Security rules compute hash server-side from request.auth.uid
+     * - Different salt prevents correlation with interactions/reports
+     *
+     * - Users can only read their own notifications (where computed hash matches recipientId)
+     * - Only Cloud Functions can create notifications
+     * - Users can update read status of their own notifications
+     */
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() &&
+                    hashForNotification(request.auth.uid).lower() == resource.data.recipientId.lower();
+      allow create: if isCloudFunction();
+      allow update: if isCloudFunction() ||
+                      (isAuthenticated() &&
+                       hashForNotification(request.auth.uid).lower() == resource.data.recipientId.lower() &&
+                       // Users can only update isRead and updatedAt fields
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isRead', 'updatedAt']));
+      allow delete: if isCloudFunction() ||
+                      (isAuthenticated() &&
+                       hashForNotification(request.auth.uid).lower() == resource.data.recipientId.lower());
+    }
+
+    /**
+     * Reports Collection
+     * Path: /reports/{reportId}
+     *
+     * DOMAIN-SEPARATED HASHING:
+     * - reporterId is stored as SHA256("report:" + uid)
+     * - reporterInteractionHashedId is stored as SHA256(uid) for Cloud Function queries
+     * - Security rules compute hash server-side from request.auth.uid
+     * - Different salt prevents correlation with interactions/notifications
+     *
+     * ALL WRITES VIA CLOUD FUNCTIONS:
+     * - reportPositiveTest: Creates positive test reports and triggers chain propagation
+     * - reportNegativeTest: Creates negative test reports and updates chain status
+     * - deleteExposureReport: Deletes reports and handles cleanup/notifications
+     *
+     * - Users can only read their own reports (where computed hash matches reporterId)
+     * - All create/update/delete operations go through Cloud Functions (Admin SDK)
+     */
+    match /reports/{reportId} {
+      allow read: if isAuthenticated() &&
+                    (hashForReport(request.auth.uid).lower() == resource.data.reporterId.lower() ||
+                     isCloudFunction());
+      allow create: if isCloudFunction();
+      allow update: if isCloudFunction();
+      allow delete: if isCloudFunction();
+    }
+
+    // Deny all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

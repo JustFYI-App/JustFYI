@@ -1,0 +1,89 @@
+-- Interaction table stores recorded encounters with other users
+-- Username snapshot is preserved at interaction time (not updated if user changes name later)
+
+CREATE TABLE Interaction (
+    id TEXT PRIMARY KEY NOT NULL,
+    partner_anonymous_id TEXT NOT NULL,
+    partner_username_snapshot TEXT NOT NULL,
+    recorded_at INTEGER NOT NULL,
+    synced_to_cloud INTEGER NOT NULL DEFAULT 0
+);
+
+-- Create index for efficient date range queries
+CREATE INDEX idx_interaction_recorded_at ON Interaction(recorded_at);
+
+-- Create index for unsynced interactions
+CREATE INDEX idx_interaction_synced ON Interaction(synced_to_cloud);
+
+-- Insert a single interaction
+insertInteraction:
+INSERT INTO Interaction (id, partner_anonymous_id, partner_username_snapshot, recorded_at, synced_to_cloud)
+VALUES (?, ?, ?, ?, ?);
+
+-- Insert or replace interaction (for sync operations)
+insertOrReplaceInteraction:
+INSERT OR REPLACE INTO Interaction (id, partner_anonymous_id, partner_username_snapshot, recorded_at, synced_to_cloud)
+VALUES (?, ?, ?, ?, ?);
+
+-- Update sync status
+updateSyncStatus:
+UPDATE Interaction
+SET synced_to_cloud = ?
+WHERE id = ?;
+
+-- Mark multiple interactions as synced
+markAsSynced:
+UPDATE Interaction
+SET synced_to_cloud = 1
+WHERE id IN ?;
+
+-- Delete an interaction
+deleteInteraction:
+DELETE FROM Interaction
+WHERE id = ?;
+
+-- Delete all interactions (for GDPR compliance)
+deleteAllInteractions:
+DELETE FROM Interaction;
+
+-- Delete interactions older than specified timestamp (120-day cleanup)
+deleteInteractionsOlderThan:
+DELETE FROM Interaction
+WHERE recorded_at < ?;
+
+-- Get all interactions ordered by date (newest first)
+getAllInteractions:
+SELECT * FROM Interaction
+ORDER BY recorded_at DESC;
+
+-- Get interactions within a date range (for exposure window)
+getInteractionsInDateRange:
+SELECT * FROM Interaction
+WHERE recorded_at >= ? AND recorded_at <= ?
+ORDER BY recorded_at DESC;
+
+-- Get interactions within last N days
+getInteractionsWithinDays:
+SELECT * FROM Interaction
+WHERE recorded_at >= ?
+ORDER BY recorded_at DESC;
+
+-- Get unsynced interactions
+getUnsyncedInteractions:
+SELECT * FROM Interaction
+WHERE synced_to_cloud = 0
+ORDER BY recorded_at ASC;
+
+-- Get interaction by id
+getInteractionById:
+SELECT * FROM Interaction
+WHERE id = ?;
+
+-- Get interaction count
+getInteractionCount:
+SELECT COUNT(*) FROM Interaction;
+
+-- Get unsynced interaction count
+getUnsyncedCount:
+SELECT COUNT(*) FROM Interaction
+WHERE synced_to_cloud = 0;
